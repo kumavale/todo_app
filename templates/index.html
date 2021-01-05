@@ -2,6 +2,8 @@
 <html>
     <head>
         <meta charset="utf-8" />
+        <script type="text/javascript" src="static/js/script.js"></script>
+        <link rel="stylesheet" href="static/css/style.css">
         <title>Todo App</title>
     </head>
     <body>
@@ -28,85 +30,6 @@
                 </div>
             {% endfor %}
         </div>
-
-<style>
-h1 {
-    margin: 10px 10px 5px 10px;
-    border-bottom: solid 2px green;
-    background-color: #aaffaa;
-    border-radius: 10px;
-}
-
-div#post, div#view {
-    border: ridge 6px blue;
-    text-align: center;
-    width: 540px;
-    margin: auto;
-    background-color: #cceeff;
-    border-radius: 10px;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-    padding: 5px;
-}
-
-input, textarea {
-    border: solid 2px green;
-    font-size: 14pt;
-    padding: 2px;
-    display:inline;
-    vertical-align:middle;
-    resize: none;
-    overflow: auto;
-}
-
-input#send {
-    background-color : #3388dd;
-    color: white;
-    font-size: 16pt;
-    border: hidden;
-    border-radius: 5px;
-}
-
-input#erase {
-    background-color : white;
-    color: red;
-    font-size: 16pt;
-    border: outset;
-    border-radius: 5px;
-}
-
-textarea#msg {
-    width: 256px;
-}
-
-div#lists p{
-    font-size:15pt;
-    font-weight: bold;
-    text-align:left;
-    background-color: #ffffcc;
-    border: solid 2px orange;
-    padding: 5px;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-#welcome {
-    font-size: 22px;
-    color: black;
-}
-</style>
-
-<script type="text/javascript">
-    function auto_height(argObj) {
-        argObj.style.height = "10px";
-        var wSclollHeight = parseInt(argObj.scrollHeight);
-        var wLineH = parseInt(argObj.style.lineHeight.replace(/px/, ''));
-        if (wSclollHeight < (wLineH * 2)) {
-            wSclollHeight = (wLineH * 2);
-        }
-        argObj.style.height = wSclollHeight + "px";
-    }
-</script>
-
     </body>
 </html>
+

@@ -1,9 +1,11 @@
+use actix_files as fs;
 use actix_web::{get, http::header, post, web, App, HttpResponse, HttpServer, ResponseError};
 use askama::Template;
 use concatsql::prelude::*;
 use concatsql::html_special_chars;
 use serde::Deserialize;
 use thiserror::Error;
+
 use std::sync::{Arc, Mutex};
 
 #[derive(Deserialize)]
@@ -83,11 +85,14 @@ async fn main() -> Result<(), actix_web::Error> {
     )
     .expect("Failed to create a table `todo`.");
 
+    println!("Serving on: http://localhost:8080");
+
     HttpServer::new(move || {
         App::new()
             .service(index)
             .service(add_todo)
             .service(delete_todo)
+            .service(fs::Files::new("/static", ".").show_files_listing())
             .data(conn.clone())
     })
     .bind("0.0.0.0:8080")?
